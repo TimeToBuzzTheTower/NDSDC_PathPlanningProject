@@ -124,7 +124,7 @@ int main() {
                   std::cout << "Strategy adopted: Right-most lane possible" << std::endl;
               }
               else if (half_of_the_track + 1 == 2) {
-                  std::cout << "Strategy adopted: Lowest cost lane, determined by penalizing lane switching and speed limit penalties" << std::cout;
+                  std::cout << "Strategy adopted: Lowest cost lane, determined by penalizing lane switching and speed limit penalties" << std::endl;
               }
           }
 
