@@ -118,7 +118,7 @@ int main() {
 
           //DEBUGGING
           if (prev_half_of_track != half_of_the_track) {
-              std::cout<<"CURRENTLY" << half_of_the_track << "PART OF THE TRACK" << std >> endl;
+              std::cout<<"CURRENTLY" << half_of_the_track << "PART OF THE TRACK" << std::endl;
               prev_half_of_track = half_of_the_track;
               if (half_of_the_track + 1 == 1) {
                   std::cout << "Strategy adopted: Right-most lane possible" << std::endl;
