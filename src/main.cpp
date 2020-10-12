@@ -243,7 +243,7 @@ int main() {
           // Least cars
           //int lane_least_cars = std::distance(num_cars_lane.begin(), std::min_element(num_cars_lane.begin(), num_cars_lane.end()));
           //int lane_highest_avgspeed = std::distance(avg_speeds_lane.begin(), std::max_element(avg_speeds_lane.begin(), avg_speeds_lane.end()));
-          target_lane = lane_lowest_cost; // Current Setting: Target Lane is the one with the lowest cost
+          target_lane = lane_highest_speed; // Current Setting: Target Lane is the one with the lowest cost
 
           // Define actions for the two situations: Leading vehicles and cruising
           double speed_increment = 0;
