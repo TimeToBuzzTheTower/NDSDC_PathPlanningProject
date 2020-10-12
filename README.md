@@ -26,6 +26,13 @@ The planner itself proceeds in five steps:
 5. Behavior planning (especially lane choosing): strategies for setting a future lane to drive in. Cost functions are the key factor here. Low Cost, low traffic and highest average speed are the options available.
 
 ## Trajectory generation
+Trajectory generation is a low level action which gets the car to move according to the lane lines. Conditions are defined to avoid driving outside of lanes or directly on the lane lines, bearing in mind the smooth steering. The code for generating trajectories is based on the spline library and is mostly adopted from the Project Q&A video with some minor changes. The code corresponding to trajectory generation can be found from approx. line 323 - 427 in main.cpp.
+
+## Sensor fusion
+We use sensor fusion to obtain information about the other vehicles on the road, such as their speed, their lanes and their distance to our vehicle. These type of information will be used in all the other components, such as speed control and lane selection.
+
+## Speed control and collision avoidance
+
 
 ## Basic Build Instructions
 
