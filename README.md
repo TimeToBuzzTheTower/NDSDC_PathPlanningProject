@@ -6,10 +6,10 @@ The goal of this project is to design a path planner that is able to create smoo
 
 The solution consists of the following files:
 
-main.cpp: interfaces with the simulator and invokes the path planner.
-planner.hpp: implements the path planner. Given the telemetry data provided from the simulator generates a new path for the car in world coordinates.
-spline.h: cubic spline interpolation library by Tino Kluge used by the trajectory generator.
-json.hpp: JSON library for C++ used to interface the simulator.
+1. main.cpp: interfaces with the simulator and invokes the path planner.
+2. planner.hpp: implements the path planner. Given the telemetry data provided from the simulator generates a new path for the car in world coordinates.
+3. spline.h: cubic spline interpolation library by Tino Kluge used by the trajectory generator.
+4. json.hpp: JSON library for C++ used to interface the simulator.
 
 #### The map of the highway is in data/highway_map.txt
 Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
