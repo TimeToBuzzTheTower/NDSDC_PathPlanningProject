@@ -11,10 +11,21 @@ The solution consists of the following files:
 3. spline.h: cubic spline interpolation library by Tino Kluge used by the trajectory generator.
 4. json.hpp: JSON library for C++ used to interface the simulator.
 
+All components of the path planner are included in the main.cpp.
+
 #### The map of the highway is in data/highway_map.txt
 Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
 
 The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
+
+The planner itself proceeds in five steps:
+1. Trajectory generation: This basically is responsible to generate a path which the vehicle needs to follow.
+2. Sensor fusion: Here, we use the provided sensor fusion to gather information about the other vehicles such as their speed and the lane they are driving on.
+3. Speed control and collision avoidance: Acceleration and deceleration are defined to avoid violations and jerks to enable speed adjustments.
+4. Lane switching and cruising: Conditions defined under which to switch lanes or keep driving at the current lane.
+5. Behavior planning (especially lane choosing): strategies for setting a future lane to drive in. Cost functions are the key factor here. Low Cost, low traffic and highest average speed are the options available.
+
+## Trajectory generation
 
 ## Basic Build Instructions
 
