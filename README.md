@@ -32,7 +32,22 @@ Trajectory generation is a low level action which gets the car to move according
 We use sensor fusion to obtain information about the other vehicles on the road, such as their speed, their lanes and their distance to our vehicle. These type of information will be used in all the other components, such as speed control and lane selection.
 
 ## Speed control and collision avoidance
+The speed of the leading vehicle is used over the sensor fusion vector in Frenet coordinates. On noticing the lead car position (s) within a certain safety distance, a decision check is made on whether a lane change is permissible or not. When its not possible, the vehicle is made to decelerate to match the velocity of the leading vehicle through a pre-defined deceleration rate. When the lane is clear again (upon say, lane changing) the vehicle is accelerated to the target speed.
+A collision warning is established within 15m distance. A so called "EMERGENCY BRAKING" is enabled with a higher deceleration avoiding the violation limit.
 
+(include gif here)
+
+## Lane change maneuver
+Lane change involves using sensor fusion information, primarily to determine the distance of other vehicles. The major distingishing factors are whether a lead vehicle is being followed, or driving on a lane with no traffic ahead.
+If a vehicle is on the same lane as us and the distance falls below a certain safety distance (this could be done as function of speed dependancy), we check if a lane change is possible by measuring the distance of the vehicles on the adjacent lane(s). If, on the adjacent lane(s), no vehicle is within 30m in front or behind us, we perform the lane change. If a lane change is not possible due to other vehicles being present within the safety distance, we tell the vehicle to keep the current lane and to eventually slow down if needed.
+
+## Behaviour Planning
+Two main tactical planning strategies are implemented in this project, where the strategies are switched approximately halfway across the track.
+
+"Keeping to the right as much as possible" is a highway traffic regulation, implemented in many european countries. Hence, to fulfill this legal requirement, it is always attempted to keep the vehicle to the right-most lane.
+
+![](doc/strategy1_short.gif)
+This animation illustrates this strategy.
 
 ## Basic Build Instructions
 
