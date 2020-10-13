@@ -46,7 +46,7 @@ Two main tactical planning strategies are implemented in this project, where the
 
 "Keeping to the right as much as possible" is a highway traffic regulation, implemented in many european countries. Hence, to fulfill this legal requirement, it is always attempted to keep the vehicle to the right-most lane.
 
-![](doc/strategy1_short.gif)
+![](data/strategy1_short.gif)
 This animation illustrates this strategy.
 
 ## Basic Build Instructions
