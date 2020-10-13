@@ -47,7 +47,15 @@ Two main tactical planning strategies are implemented in this project, where the
 "Keeping to the right as much as possible" is a highway traffic regulation, implemented in many european countries. Hence, to fulfill this legal requirement, it is always attempted to keep the vehicle to the right-most lane.
 
 ![](data/KeepRightLane.gif)
+
 This animation illustrates this strategy.
+
+"Choose lane with the highest average speed" (in addition, strategies such as lane with the lowest cost | lane with least vehicles are also mentioned, but commented) is preformed in the second half of the track. The pre-defined cost function determines the weighted sum of 1) switching lanes and driving below a certain speed limit.
+
+Since we are dealing with only three distinct lanes, we have only three discrete values which could be considered for determining the cost. This also ensures that no unnecessary lane changes occur.
+```
+lane_switch_cost = delta_lane * (1-exp(-delta_lane))
+```
 
 ## Basic Build Instructions
 
